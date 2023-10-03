@@ -1,0 +1,9 @@
+{
+    "name" : "victor/aulas-php-poo",
+    "description" : "Versão do exemplo usando orientação a objetos",
+    "autoload" : {
+        "psr-4" : {
+            "ExemploCrudPdo\\" : "src/"
+        }
+    }
+}
