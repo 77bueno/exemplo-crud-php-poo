@@ -3,7 +3,7 @@ namespace ExemploCrudPdo;
 
 use PDO, Exception;
 
-abstract class banco {
+abstract class Banco {
     /* Propriedades/atributos estáticos
     para acesso ao Banco */
     private static string $servidor = "localhost";
