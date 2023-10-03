@@ -1,2 +1,1 @@
-# exemplo-crud-php-poo
- Exemplo de CRUD PHP/SQL refatorado com Orientação a Objetos
+# Exemplo de CRUD PHP/SQL refatorado com Orientação a Objetos
