@@ -1,6 +1,7 @@
 <?php
-require_once "../src/funcoes-fabricantes.php";
-$id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
-excluirFabricante($conexao, $id);
+require_once "../vendor/autoload.php";
+use ExemploCrudPdo\Fabricante;
+$fabricante = new Fabricante;
+$fabricante->setId($_GET['id']);
+$fabricante->excluirFabricante();
 header("location:visualizar.php");
-

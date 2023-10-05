@@ -46,7 +46,6 @@ final class Fabricante {
         }
     
     }
-    
 
     public function lerUmFabricante():array {
         $sql = "SELECT * FROM fabricantes WHERE id = :id";
@@ -63,7 +62,6 @@ final class Fabricante {
         return $resultado;
     } 
 
-        
     public function atualizarFabricante():void {
         $sql = "UPDATE fabricantes SET nome = :nome WHERE id = :id";
         
@@ -76,6 +74,18 @@ final class Fabricante {
             die("Erro ao atualizar: ".$erro->getMessage());
         }
     } 
+
+    function excluirFabricante():void {
+        $sql = "DELETE FROM fabricantes WHERE id = :id";
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro ao excluir: ".$erro->getMessage());
+        }
+    } 
+
 
 
     public function getId(): int {
