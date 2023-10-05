@@ -41,8 +41,6 @@ class Produto {
         return $resultado;
     }
 
-
-
     public function inserirProduto():void {
     
         $sql = "INSERT INTO produtos(
@@ -77,8 +75,6 @@ class Produto {
         return $resultado;
     }
 
-    
-
     function atualizarProduto():void {
 
         $sql = "UPDATE produtos SET
@@ -99,6 +95,18 @@ class Produto {
         } catch (Exception $erro) {
             die("Erro ao atualizar: ".$erro->getMessage());
         }   
+    }
+
+        
+    function excluirProduto():void {
+        $sql = "DELETE FROM produtos WHERE id = :id";
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro ao excluir: ".$erro->getMessage());
+        }
     }
 
     public function getId(): int {
