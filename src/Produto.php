@@ -1,6 +1,5 @@
 <?php 
 namespace ExemploCrudPdo;
-
 use Exception, PDO;
 
 class Produto {
@@ -11,8 +10,8 @@ class Produto {
     private int $quantidade;
     private string $descricao;
     private int $fabricante_id;
-
     private PDO $conexao;
+
     public function __construct() {
         $this->conexao = Banco::conecta();
     }
